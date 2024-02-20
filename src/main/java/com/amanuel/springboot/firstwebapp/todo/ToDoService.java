@@ -10,13 +10,16 @@ import org.springframework.stereotype.Service;
 public class ToDoService {
 	
 	private static  List<Todo> todos=new ArrayList<>();
+
+	
+	private static int  count=0;
 	
 	static {
-		todos.add(new Todo(1,"Amanuel","AWS",
+		todos.add(new Todo(++count,"Amanuel","AWS",
 				LocalDate.now().plusYears(1),false));
-		todos.add(new Todo(2,"Amanuel","DevOps",
+		todos.add(new Todo(++count,"Amanuel","DevOps",
 				LocalDate.now().plusYears(2),false));
-		todos.add(new Todo(3,"Amanuel","Spring",
+		todos.add(new Todo(++count,"Amanuel","Spring",
 				LocalDate.now().plusYears(1),false));
 	}
 	
@@ -24,5 +27,11 @@ public class ToDoService {
 		return todos;
 	}
 	
+	
+	public void addTodo(String description,String name, LocalDate targetDate,boolean done){
+		Todo todo=new Todo(++count,description ,name,targetDate,done);
+		todos.add(todo);
+		
+	}
 
 }
