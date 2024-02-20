@@ -2,22 +2,35 @@ package com.amanuel.springboot.firstwebapp.todo;
 
 import java.time.LocalDate;
 
+import jakarta.validation.constraints.Size;
+
+
+
+
 public class Todo {
 
-	private int id;
-	private String username;
-	private String description;
-	private LocalDate targetDate;
-	private boolean done;
-
+	
+	
+	
 	public Todo(int id, String username, String description, LocalDate localDate, boolean done) {
 		super();
 		this.id = id;
 		this.username = username;
-		this.description = description;
+		this.description=description;
 		this.targetDate = localDate;
 		this.done = done;
 	}
+	
+	private int id;
+	private String username;
+	
+	@Size(min=10,message="Enter at least 10 chars")
+	private String description;
+	private LocalDate targetDate;
+	private boolean done;
+
+	
+
 
 	public void setId(int id) {
 		this.id = id;

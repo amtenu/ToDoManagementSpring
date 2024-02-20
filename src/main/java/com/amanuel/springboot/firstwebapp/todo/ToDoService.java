@@ -28,8 +28,8 @@ public class ToDoService {
 	}
 	
 	
-	public void addTodo(String description,String name, LocalDate targetDate,boolean done){
-		Todo todo=new Todo(++count,description ,name,targetDate,done);
+	public void addTodo(String username,String description, LocalDate targetDate,boolean done){
+		Todo todo=new Todo(++count,username,description,targetDate,done);
 		todos.add(todo);
 		
 	}

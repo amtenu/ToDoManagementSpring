@@ -9,7 +9,8 @@
 <body>
 
 	<div class="container">
-		<h1>Your todos</h1>
+		<h1>Your todos ${name }</h1>
+		
 
 		<table class="table" >
 			<thead>

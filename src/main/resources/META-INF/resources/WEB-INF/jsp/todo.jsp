@@ -5,17 +5,17 @@
 <head>
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css"
 	rel="stylesheet">
-<title>Add to do</title>
+<title>Add to do page</title>
 </head>
 <body>
 
 	<div class="container">
-		<h1>Enter todo details</h1>
+		<h1>Enter Todo details</h1>
 		<form:form method="post" modelAttribute="todo">
-			Description:<form:input type="text" path="description"
-				required="required" />
-			<form:input type="hidden" path="id" />
-			<form:input type="hidden" path="done" />
+			Description:<form:input type="text" name="description" required="required" path="description"/>
+			<form:errors path="description" cssClass="text-warning"/>
+			<form:input type="hidden" path="id"/>
+			<form:input type="hidden" path="done"/>
 			<input type=submit class="btn btn-success">
 		</form:form>
 
