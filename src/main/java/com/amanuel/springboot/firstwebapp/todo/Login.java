@@ -1,4 +1,4 @@
-package com.amanuel.springboot.firstwebapp.login;
+package com.amanuel.springboot.firstwebapp.todo;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
