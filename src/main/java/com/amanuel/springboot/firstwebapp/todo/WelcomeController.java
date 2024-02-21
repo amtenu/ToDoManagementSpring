@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
 @SessionAttributes("name")
-public class Login {
+public class WelcomeController {
 
 	
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String login(ModelMap model) {
+	public String goToWelcomePage(ModelMap model) {
 		model.put("name", "Amanuel");
 		return "welcome";
 	}
