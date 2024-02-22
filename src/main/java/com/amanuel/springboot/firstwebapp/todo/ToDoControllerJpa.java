@@ -76,7 +76,9 @@ public class ToDoControllerJpa {
 
 	@RequestMapping(value = "update-todo", method = RequestMethod.GET)
 	public String showUpDateToDos(@RequestParam int id, ModelMap model) {
-		Todo todo = todoService.findById(id);
+		Todo todo=todoRepository.findById(id).get();
+		
+		//Todo todo = todoService.findById(id);
 		model.addAttribute("todo", todo);
 		return "todo";
 	}
@@ -90,7 +92,8 @@ public class ToDoControllerJpa {
 
 		String username = getLoggedInUsername(model);
 		todo.setUsername(username);
-		todoService.updateTodo(todo);
+		todoRepository.save(todo);
+		//todoService.updateTodo(todo);
 		return "redirect:list-todos";
 	}
 
