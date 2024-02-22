@@ -16,16 +16,20 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import jakarta.validation.Valid;
 
-//@Controller
+@Controller
 @SessionAttributes("name")
-public class ToDoController {
+public class ToDoControllerJpa {
 
-	public ToDoController(ToDoService todoService) {
+	public ToDoControllerJpa(ToDoService todoService,TodoRepository todoRepository) {
 		super();
 		this.todoService = todoService;
+		this.todoRepository=todoRepository;
 	}
 
 	private ToDoService todoService;
+	
+	
+	private TodoRepository todoRepository;
 
 	@RequestMapping("list-todos")
 	public String listAllToDos(ModelMap model) {
