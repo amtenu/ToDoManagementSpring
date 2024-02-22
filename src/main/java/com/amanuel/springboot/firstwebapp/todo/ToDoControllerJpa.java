@@ -34,7 +34,7 @@ public class ToDoControllerJpa {
 	@RequestMapping("list-todos")
 	public String listAllToDos(ModelMap model) {
 		String username = getLoggedInUsername(model);
-		List<Todo> todos = todoService.findByUserName(username);
+		List<Todo> todos =todoRepository.findByUsername(username);
 		model.addAttribute("todos", todos);
 		return "listToDos";
 	}
